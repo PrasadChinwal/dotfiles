@@ -1,5 +1,5 @@
 # Path to your dotfiles.
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/dotfiles
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -78,8 +78,6 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git osx)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -109,6 +107,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+# Source Aliases
+source $DOTFILES/aliases.zsh
+
+alias zshconfig="vi ~/.zshrc"
+alias ohmyzsh="vi $HOME/dotfiles/.oh-my-zsh"
 alias docker1="ssh pchin3adm@uisdocker1.uisad.uis.edu"
+
+source $ZSH/oh-my-zsh.sh
