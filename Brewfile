@@ -26,6 +26,7 @@ brew 'nginx'
 brew 'node'
 brew 'redis'
 brew 'yarn'
+brew 'node'
 
 # Apps
 cask 'aerial'

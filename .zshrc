@@ -1,5 +1,5 @@
 # Path to your dotfiles.
-export DOTFILES=$HOME/dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -109,6 +109,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Example aliases
 # Source Aliases
 source $DOTFILES/aliases.zsh
+export PATH=~/.composer/vendor/bin:$PATH
 
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi $HOME/dotfiles/.oh-my-zsh"
