@@ -28,8 +28,8 @@ alias watch="npm run watch"
 
 # Docker
 # alias docker-composer="docker-compose"
-alias dstart="docker start $(docker ps -a -q)"
-alias dstop="docker stop $(docker ps -a -q)"
+alias dstart="docker start $1"
+alias dstop="docker stop $1"
 # alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
 # alias dpurgeimages="docker rmi $(docker images -q)"
 # dbuild() { docker build -t=$1 .; }
