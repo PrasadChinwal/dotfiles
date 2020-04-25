@@ -2,6 +2,7 @@
 # alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 # alias reloadcli="source $HOME/.zshrc"
 # alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias ehosts="sudo nano /etc/hosts"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -ahlF --color --group-directories-first"
 weather() { curl -4 wttr.in/${1:-antwerp} }
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
@@ -48,3 +49,5 @@ alias gd="git diff"
 alias resolve="git add . && git commit --no-edit"
 alias gl="git log --oneline --decorate --color"
 alias dracarys="git clean -df && git reset --hard"
+
+alias chrome='open -a "Google Chrome"'

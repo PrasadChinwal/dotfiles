@@ -1,11 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
-# Enable completions
-autoload -Uz compinit && compinit
 
 # Minimal - Theme Settings
 export MNML_INSERT_CHAR="$"
@@ -16,7 +20,7 @@ export MNML_RPROMPT=('mnml_cwd 20')
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="minimal"
+ZSH_THEME="powerlevel10k/powerlevel10k" #minimal
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,7 +80,7 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx)
+plugins=(zsh-autosuggestions)
 
 # User configuration
 
@@ -95,8 +99,13 @@ plugins=(osx)
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Source Powerlevel10k font
+POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL10K_MODE='nerdfont-complete'
+
 #ZSH-Completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/local/share/zsh-completions $fpath)
 
 #ZSH Autocomplete
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -111,8 +120,14 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES/aliases.zsh
 export PATH=~/.composer/vendor/bin:$PATH
 
-alias zshconfig="vi ~/.zshrc"
-alias ohmyzsh="vi $HOME/dotfiles/.oh-my-zsh"
-alias docker1="ssh pchin3adm@uisdocker1.uisad.uis.edu"
+alias zshconfig="vi $HOME/.dotfiles/.zshrc"
+alias docker1="ssh pchin3adm@uisdocker1.uisad.uis.edu -i '~/.ssh/id_rsa'"
+
+#source ~/.iterm2_shell_integration.zsh
 
 source $ZSH/oh-my-zsh.sh
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
