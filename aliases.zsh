@@ -4,7 +4,7 @@
 # alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ehosts="sudo nano /etc/hosts"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -ahlF --color --group-directories-first"
-weather() { curl -4 wttr.in/${1:-antwerp} }
+weather() { curl -4 wttr.in/${1:-springfield,Illinois} }
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 # alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
