@@ -28,6 +28,7 @@ alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias watch="npm run watch"
 
 # Docker
+alias rundocker='open -a "Docker"'
 # alias docker-composer="docker-compose"
 alias dstart="docker start $1"
 alias dstop="docker stop $1"
