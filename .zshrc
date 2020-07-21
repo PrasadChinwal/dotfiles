@@ -12,9 +12,9 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 
 # Minimal - Theme Settings
-export MNML_INSERT_CHAR="$"
-export MNML_PROMPT=(mnml_git mnml_keymap)
-export MNML_RPROMPT=('mnml_cwd 20')
+# export MNML_INSERT_CHAR="$"
+# export MNML_PROMPT=(mnml_git mnml_keymap)
+# export MNML_RPROMPT=('mnml_cwd 20')
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -101,8 +101,12 @@ plugins=(zsh-autosuggestions)
 
 # Source Powerlevel10k font
 POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
-POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status php_version ram disk_usage root_indicator background_jobs history time)
 POWERLEVEL10K_MODE='nerdfont-complete'
+POWERLEVEL10K_DISK_USAGE_ONLY_WARNING=true
+POWERLEVEL10K_DISK_USAGE_WARNING_LEVEL=10
+POWERLEVEL10K_IP_INTERFACE=eth0
+POWERLEVEL10K_TIME_FORMAT="%D{%H:%M:%S \uE868  %d.%m.%y}"
 
 #ZSH-Completions
 #fpath=(/usr/local/share/zsh-completions $fpath)
@@ -130,4 +134,4 @@ source $ZSH/oh-my-zsh.sh
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
