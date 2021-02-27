@@ -13,8 +13,6 @@ alias zbundle="antibody bundle < $DOTFILES/zsh_plugins.txt > $DOTFILES/zsh_plugi
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
-# alias sites="cd $HOME/Sites"
-# alias lara="sites && cd laravel/"
 
 # Laravel
 alias a="php artisan"
@@ -22,6 +20,9 @@ alias a="php artisan"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+
+# PHP Unit
+alias pf="./vendor/bin/phpunit --filter"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"

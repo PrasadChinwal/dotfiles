@@ -7,6 +7,8 @@ fi
 
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:~/Users/prasadchinwal/flutter/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -135,3 +137,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias python=/usr/local/bin/python3
